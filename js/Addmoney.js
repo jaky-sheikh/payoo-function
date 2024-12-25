@@ -18,6 +18,14 @@ document.getElementById('btn-add-money').addEventListener('click', function (eve
         const balance = getTextFieldValueById('account-balance');
         const newBalance = balance + addMoney;
         document.getElementById('account-balance').innerText = newBalance;
+
+        // add to transaction history
+        const p = document.createElement('p');
+        p.innerText = `Added: ${addMoney} Tk. Balance: ${newBalance}`;
+
+        // common function
+        document.getElementById('transaction-container').appendChild(p);
+
     }
     else {
         alert('Failed to add money')
